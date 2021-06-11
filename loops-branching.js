@@ -1,44 +1,33 @@
-let n = Number(prompt("Vvedit number N ", 10));
-let m = Number(prompt("Vvedit number M ", 100));
+let firstNumber = Number( prompt("Vvedit firstNumber  ", 10) );
+let secondNumber = Number( prompt("Vvedit secondNumber ", 100) );
 
-while(isNaN(n)){
-    alert("Було введене не число попробуйте ше раз!");
-    n = prompt("Введіть ціле число");
-}
-console.log(n);
-console.log(!Number.isInteger(n));
+while( isNaN(firstNumber) ){
 
-while(isNaN(m)){
-    alert("Буо введене не число попробуйте ше раз!");
-    n = prompt("Введіть ціле число");
+    firstNumber = Number( prompt("Enter an integer") );
 }
-console.log(m);
-console.log(!Number.isInteger(m));
-const check = confirm("Пропускати парні цифри?")
+console.log("firstNumber : ",firstNumber);
+console.log("Integer firstNumber ", !Number.isInteger(firstNumber) );
+
+while( isNaN(secondNumber) ) {
+    secondNumber = Number( prompt("Enter an integer") );
+}
+console.log("secondNumber",secondNumber);
+console.log( "Integer secondNumber",!Number.isInteger(secondNumber) );
+
+const check = confirm("Skip even numbers?");
 let result = 0;
-if(check){
 
-    alert ("Потрібно пропускати")
-}
- else {
-alert("Не потрібно пропускати")
- }
-for( let i = n; i <= m; i++){
+for( let i = firstNumber; i <= secondNumber; i++ ) {
 
- if(check){
- if ( i % 2 === 0){
-  continue;
-
-  console.log("Парне число")
- }
+ if (check) {
+    if ( i % 2 === 0) {
+    continue;
+    console.log("even number")
+    }
+    } else {
+    console.log("not an even number")
+    }
+result += i;
 }
 
-
-else{
-console.log("не парне число")
-}
-result += i
-}
-
-console.log("Result :" + result)
-console.log(result)
+console.log("Result : " + result)
